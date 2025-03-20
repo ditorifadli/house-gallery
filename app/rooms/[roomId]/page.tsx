@@ -138,7 +138,7 @@ export default async function RoomPage({ params }: { params: Promise<{ roomId: s
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between py-4">
+        <div className="px-8 flex h-16 items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-2 text-sm font-medium">
             <ArrowLeft className="h-4 w-4" />
             <span className="hidden md:inline">Back</span>
@@ -150,13 +150,13 @@ export default async function RoomPage({ params }: { params: Promise<{ roomId: s
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-8 md:py-12">
+        <section className="px-8 py-8 md:py-12">
           <div className="mx-auto max-w-4xl">
             <p className="mb-8 text-lg text-muted-foreground">{room.description}</p>
             <RoomGallery images={room.images} roomName={room.name} />
           </div>
         </section>
-        <section className="container pb-12">
+        <section className="px-8 pb-12">
           <div className="mx-auto flex max-w-4xl items-center justify-between">
             {prevRoom ? (
               <Button variant="outline" asChild>
@@ -182,7 +182,7 @@ export default async function RoomPage({ params }: { params: Promise<{ roomId: s
         </section>
       </main>
       <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
+        <div className="px-8 flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} House Gallery. All rights reserved.
           </p>

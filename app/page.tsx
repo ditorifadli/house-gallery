@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between py-4">
+        <div className="px-8 flex h-16 items-center justify-between py-4">
           <Link href="/" className="text-xl font-semibold">
             House Gallery
           </Link>
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-12 md:py-18 lg:py-24">
+        <section className="px-8 py-12 md:py-18 lg:py-24">
           <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-4 text-center">
             <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">Modern House Photography</h1>
             <p className="max-w-xl leading-normal text-muted-foreground sm:text-xl sm:leading-8">
@@ -47,7 +47,7 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className="container py-8">
+        <section className="px-8 py-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {rooms.map((room) => (
               <Link
@@ -77,7 +77,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
+        <div className="px-8 flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} House Gallery. All rights reserved.
           </p>
