@@ -120,6 +120,6 @@
     @apply bg-background text-foreground;
   }
   .container {
-    @apply px-8;
+    @apply px-16;
   }
 }
