@@ -119,22 +119,22 @@ const getRoomData = async (roomId: string) => {
   return rooms[roomId as keyof typeof rooms]
 }
 
-export default async function RoomPage({ params }: { params: { roomId: string } }) {
+export default async function RoomPage({ params }: { params: Promise<{ roomId: string }> }) {
   // Await params before accessing its properties
-  const resolvedParams = await Promise.resolve(params)
+  const resolvedParams = await params
   const roomId = resolvedParams.roomId
   const room = await getRoomData(roomId)
-
+  
   if (!room) {
     notFound()
   }
-
+  
   // Get next and previous room IDs for navigation
   const roomIds = ["living-room", "kitchen", "tv-room", "bedroom", "bathroom", "office"]
   const currentIndex = roomIds.indexOf(resolvedParams.roomId)
   const prevRoom = currentIndex > 0 ? roomIds[currentIndex - 1] : null
   const nextRoom = currentIndex < roomIds.length - 1 ? roomIds[currentIndex + 1] : null
-
+  
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-sm">
